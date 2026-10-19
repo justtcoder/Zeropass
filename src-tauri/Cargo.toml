@@ -1,0 +1,33 @@
+[package]
+name = "zeropass"
+version = "0.1.0"
+description = "Private local device-to-device data transfer"
+authors = ["ZEROPASS"]
+edition = "2021"
+
+[lib]
+name = "zeropass_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+anyhow = "1"
+base64 = "0.22"
+blake3 = "1.8"
+hex = "0.4"
+if-addrs = "0.13"
+mdns-sd = "0.13"
+memmap2 = "0.9"
+quinn = { version = "0.11", default-features = false, features = ["runtime-tokio", "rustls-ring"] }
+rand = "0.8"
+rcgen = { version = "0.13", features = ["ring"] }
+rustls = { version = "0.23", features = ["ring"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+subtle = "2.6"
+tauri = { version = "2", features = [] }
+tauri-plugin-clipboard-manager = "2"
+tauri-plugin-dialog = "2"
+tokio = { version = "1", features = ["fs", "io-util", "macros", "net", "rt-multi-thread", "sync", "time"] }
