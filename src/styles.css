@@ -23,7 +23,7 @@ button { color: inherit; }
 .app-shell::before { position: absolute; z-index: -1; inset: 0; background-image: linear-gradient(#ffffff06 1px, transparent 1px), linear-gradient(90deg, #ffffff06 1px, transparent 1px); background-size: 48px 48px; mask-image: linear-gradient(to bottom, #000, transparent 65%); content: ""; pointer-events: none; }
 .topbar { display: flex; height: 78px; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
 .wordmark { display: inline-flex; align-items: center; gap: 10px; color: var(--paper); font-family: "IBM Plex Mono", monospace; font-size: 14px; font-weight: 500; letter-spacing: 0; text-decoration: none; }
-.wordmark-mark { display: grid; width: 30px; height: 30px; place-items: center; background: var(--acid); color: #172015; font-size: 16px; }
+.wordmark-mark { display: block; width: 34px; height: 34px; object-fit: contain; }
 .wordmark-light { color: #9aa59a; }
 .topbar-right { display: flex; align-items: center; gap: 28px; font-family: "IBM Plex Mono", monospace; font-size: 10px; letter-spacing: 0; }
 .network-state { display: inline-flex; align-items: center; gap: 8px; color: var(--acid); }

@@ -3,6 +3,7 @@ import { listen } from "@tauri-apps/api/event";
 import { writeText } from "@tauri-apps/plugin-clipboard-manager";
 import { open } from "@tauri-apps/plugin-dialog";
 import { useEffect, useState } from "react";
+import appIcon from "../src-tauri/icons/icon.png";
 import FileTransfer from "./components/FileTransfer";
 import QRDisplay from "./components/QRDisplay";
 import QRScanner from "./components/QRScanner";
@@ -168,7 +169,7 @@ export default function App() {
     <main className="app-shell min-h-screen">
       <header className="topbar">
         <a className="wordmark" href="#home" aria-label="ZEROPASS home">
-          <span className="wordmark-mark">Z</span>
+          <img className="wordmark-mark" src={appIcon} alt="" />
           <span>ZERO<span className="wordmark-light">PASS</span></span>
         </a>
         <div className="topbar-right">
@@ -206,7 +207,7 @@ export default function App() {
           {localPayload ? (
             <div className="endpoint-line"><span className="endpoint-dot" />{localPayload.ip}:{localPayload.port}<span className="endpoint-timer">5 MIN</span></div>
           ) : (
-            <p className="muted-copy">Generate a short-lived local session to share this device.</p>
+            <p className="muted-copy">Generate a short-lived session. Scan this QR inside another ZEROPASS desktop app; Google Lens and the browser PWA cannot join desktop QUIC sessions.</p>
           )}
 
           <div className="button-row pairing-actions">

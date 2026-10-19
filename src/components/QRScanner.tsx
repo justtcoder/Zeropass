@@ -3,9 +3,10 @@ import { useEffect, useRef, useState } from "react";
 type QRScannerProps = {
   onScan: (value: string) => void;
   onClose: () => void;
+  showManualEntry?: boolean;
 };
 
-export default function QRScanner({ onScan, onClose }: QRScannerProps) {
+export default function QRScanner({ onScan, onClose, showManualEntry = true }: QRScannerProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const onScanRef = useRef(onScan);
   const [error, setError] = useState("");
@@ -61,7 +62,7 @@ export default function QRScanner({ onScan, onClose }: QRScannerProps) {
           <span className="scan-reticle" />
         </div>
         <p className="scanner-status">{error || "Point the camera at the code on your other device."}</p>
-        <form
+        {showManualEntry && <form
           className="pairing-code-form"
           onSubmit={(event) => {
             event.preventDefault();
@@ -82,7 +83,7 @@ export default function QRScanner({ onScan, onClose }: QRScannerProps) {
           <button className="button button--accent" type="submit" disabled={!pairingCode.trim()}>
             Connect with code
           </button>
-        </form>
+        </form>}
       </section>
     </div>
   );

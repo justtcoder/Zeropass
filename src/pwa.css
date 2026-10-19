@@ -1,0 +1,33 @@
+.pwa-shell { padding-bottom: env(safe-area-inset-bottom); }
+.pwa-install { min-height: 34px; }
+.pwa-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; max-width: 920px; margin: 8px auto 28px; }
+.pwa-action { display: grid; min-height: 220px; align-content: center; justify-items: start; gap: 12px; padding: 28px; border: 1px solid var(--line); background: #191f1b; color: var(--paper); text-align: left; cursor: pointer; }
+.pwa-action:hover { border-color: var(--acid); background: #202820; }
+.pwa-action--send .pwa-action-icon { color: var(--acid); }
+.pwa-action--receive .pwa-action-icon { color: #ff9d7d; }
+.pwa-action-icon { font-family: "IBM Plex Mono", monospace; font-size: 30px; }
+.pwa-action-title { font-size: 26px; }
+.pwa-action-copy { color: var(--muted); font-size: 13px; }
+.pwa-hidden-file { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.pwa-pair-panel { min-height: 0; }
+.pwa-qr-stage { display: grid; min-height: 350px; flex: 1; place-items: center; margin: 22px 0 16px; overflow: hidden; background: radial-gradient(ellipse at center, #28332a 0%, #1a211c 54%, #171c19 100%); }
+.pwa-qr { max-width: 90%; }
+.pwa-qr svg { width: min(320px, 70vw); height: auto; }
+.pwa-signal-code { width: 100%; min-height: 74px; margin: 0 0 10px; padding: 9px; resize: vertical; border: 1px solid var(--line); background: #121714; color: var(--muted); font-family: "IBM Plex Mono", monospace; font-size: 9px; overflow-wrap: anywhere; }
+.pwa-status { margin: 18px 0 0; color: var(--muted); font-size: 13px; line-height: 1.6; overflow-wrap: anywhere; }
+.pwa-transfer-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, .8fr); gap: 18px; align-items: start; }
+.pwa-transfer-panel { display: grid; gap: 14px; }
+.pwa-selected-file { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
+.pwa-selected-file small, .pwa-request-meta { color: var(--muted); }
+.pwa-authorize { display: grid; align-content: start; gap: 12px; padding: 24px; border: 1px solid #6a8b43; background: #1a241a; }
+.pwa-authorize h2 { margin: 0; font-size: 21px; font-weight: 500; }
+.pwa-authorize p { margin-bottom: 0; }
+.pwa-request-name { color: var(--paper); font-size: 16px; overflow-wrap: anywhere; }
+.pwa-request-meta { font-family: "IBM Plex Mono", monospace; font-size: 11px; }
+.pwa-download { width: fit-content; min-height: 42px; text-decoration: none; }
+
+@media (max-width: 700px) {
+  .pwa-actions, .pwa-transfer-layout { grid-template-columns: minmax(0, 1fr); }
+  .pwa-action { min-height: 150px; }
+  .pwa-qr-stage { min-height: min(390px, 105vw); }
+}
